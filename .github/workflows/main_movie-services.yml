@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy JAR app to Azure Web App - Movie-Services
+name: Build and deploy JAR app to Azure Web App - movie-services
 
 on:
   push:
@@ -48,15 +48,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0CE5896DCCBC442FA494D3EE963C168F }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_EB9C46AD244347339054DCB3E7B2AACD }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8201EE942AF34D52B31CC61C246F31B1 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_EEE8510938384D44AB40B2ABFE82F06E }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_EC2F3850BF0D4514B065F3CB3E939551 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6DC3BADBC2564D95A942EC008FAEBCEE }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'Movie-Services'
+          app-name: 'movie-services'
           slot-name: 'Production'
           package: '*.jar'
           
