@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1")
 public class MovieController {
     private MovieService movieService;
-
+    @GetMapping("/status")
+    public String getStatus() {
+        return "Application deployed successfully!";
+    }
     @GetMapping("/{id}")
     public ResponseEntity<Movie> GetMovie(@PathVariable Long id) {
         Movie movie = movieService.read(id);
